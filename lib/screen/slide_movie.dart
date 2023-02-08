@@ -44,7 +44,7 @@ class _SlideMovieState extends State<SlideMovie> {
                     );
                   }
                   final List<MovieVO>? listBannerMovie =
-                  snapShot.data?.take(5).toList();
+                  snapShot.data?.take(dItemCount).toList();
                   return PageView.builder(
                       controller: _controller,
                       itemCount: listBannerMovie?.length,
@@ -57,7 +57,7 @@ class _SlideMovieState extends State<SlideMovie> {
           ),
           const SizedBox(height: dMp10x,),
           SmoothPageIndicator(
-            controller: _controller, count: 5,
+            controller: _controller, count: dItemCount,
             effect:  const WormEffect(
                 dotHeight: dWh11x,
                 dotWidth: dWh11x,

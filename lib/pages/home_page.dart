@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constant/color.dart';
+import '../constant/dimen.dart';
 import '../screen/slide_movie.dart';
 
 
@@ -24,10 +25,10 @@ class _HomePageState extends State<HomePage> {
         actions: const [
           Icon(
             Icons.search,
-            size: 29,
+            size: dIs29x,
           ),
           SizedBox(
-            width: 15,
+            width: dWh15x,
           )
         ],
       ),

@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: cSecondaryColor,
         actions: const [
           Icon(
+
             Icons.search,
             size: dIs29x,
           ),

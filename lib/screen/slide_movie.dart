@@ -29,9 +29,10 @@ class _SlideMovieState extends State<SlideMovie> {
         children: [
           SingleChildScrollView(
             child: SizedBox(
+              width: dWidth(context),
               height: dWh240x,
               child: FutureBuilder<List<MovieVO>?>(
-                future: dataApply.getNowPlayingMovie(1),
+                future: dataApply.getNowPlayingMovie(4),
                 builder: (context, snapShot) {
                   if (snapShot.connectionState == ConnectionState.waiting) {
                     return const Center(
@@ -57,8 +58,9 @@ class _SlideMovieState extends State<SlideMovie> {
           ),
           const SizedBox(height: dMp10x,),
           SmoothPageIndicator(
-            controller: _controller, count: dItemCount,
-            effect:  const WormEffect(
+            controller: _controller,
+            count: dItemCount,
+            effect:  const SwapEffect(
                 dotHeight: dWh11x,
                 dotWidth: dWh11x,
                 dotColor: cWhiteShadow,

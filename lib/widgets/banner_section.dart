@@ -23,6 +23,7 @@ class BannerItemView extends StatelessWidget {
     return Stack(
       children: [
         Container(
+          width: dWidth(context),
         foregroundDecoration:  const BoxDecoration(
             gradient: LinearGradient(
                 begin: AlignmentDirectional.topCenter,
@@ -42,10 +43,13 @@ class BannerItemView extends StatelessWidget {
         ),
       ),
         Positioned(
-          bottom: dMp10x,
-          left: dMp10x,
-          child: EasyTextWidget(data: movieVO?.title ?? sTitleError,fontSize: dFs18x,fontWeight: FontWeight.w600,),
-        )
+          bottom: dMp20x,
+          left: dMp20x,
+          child: EasyTextWidget(data: movieVO?.title ?? sTitleError,fontSize: dFs20x,fontWeight: FontWeight.bold,),
+        ),
+        const Align(
+          alignment: Alignment.center,
+            child: Icon(Icons.play_circle,color: cAmber,size: dIs45x,))
     ]);
   }
 }

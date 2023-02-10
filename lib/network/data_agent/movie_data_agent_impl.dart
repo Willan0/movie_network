@@ -22,5 +22,4 @@ class MovieDataAgentImpl extends MovieDataAgent{
         .map((event) => event.results)
         .first;
   }
-
 }

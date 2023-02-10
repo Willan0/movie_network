@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constant/color.dart';
 import '../constant/dimen.dart';
-import '../screen/slide_movie.dart';
+import '../view_items/slide_movie.dart';
 
 
 class HomePage extends StatefulWidget {

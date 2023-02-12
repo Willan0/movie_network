@@ -34,7 +34,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: const [
+          // banner section
           SlideMovie(),
+          //
         ],
       ),
     );

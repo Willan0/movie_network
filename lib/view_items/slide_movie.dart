@@ -27,33 +27,31 @@ class _SlideMovieState extends State<SlideMovie> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SingleChildScrollView(
-            child: SizedBox(
-              width: dWidth(context),
-              height: dWh240x,
-              child: FutureBuilder<List<MovieVO>?>(
-                future: dataApply.getNowPlayingMovie(4),
-                builder: (context, snapShot) {
-                  if (snapShot.connectionState == ConnectionState.waiting) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  if (snapShot.hasError) {
-                    return const Center(
-                      child: Text(sErrorMessage),
-                    );
-                  }
-                  final List<MovieVO>? listBannerMovie =
-                  snapShot.data?.take(dItemCount).toList();
-                  return PageView.builder(
-                      controller: _controller,
-                      itemCount: listBannerMovie?.length,
-                      itemBuilder: (context, index) {
-                        return BannerItemView(movieVO: listBannerMovie?[index]);
-                      });
-                },
-              ),
+          SizedBox(
+            width: dWidth(context),
+            height: dWh240x,
+            child: FutureBuilder<List<MovieVO>?>(
+              future: dataApply.getNowPlayingMovie(4),
+              builder: (context, snapShot) {
+                if (snapShot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                if (snapShot.hasError) {
+                  return const Center(
+                    child: Text(sErrorMessage),
+                  );
+                }
+                final List<MovieVO>? listBannerMovie =
+                snapShot.data?.take(dItemCount).toList();
+                return PageView.builder(
+                    controller: _controller,
+                    itemCount: listBannerMovie?.length,
+                    itemBuilder: (context, index) {
+                      return BannerItemView(movieVO: listBannerMovie?[index]);
+                    });
+              },
             ),
           ),
           const SizedBox(height: dMp10x,),
